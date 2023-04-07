@@ -1,0 +1,12 @@
+.containerCards{
+
+    display:flex;
+    justify-content: center;
+    min-height: 90vh;
+    align-items: center;
+    gap:5px;
+    border-color: black;
+ 
+   
+    }
+    
