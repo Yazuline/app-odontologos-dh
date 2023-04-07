@@ -1,0 +1,12 @@
+.containerCards{
+   
+display:inline-flex;
+justify-content: center;
+min-height: 100vh;
+align-items: center;
+gap:20px;
+border-color: black;
+padding: 12px;
+flex-wrap: wrap;
+}
+
