@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-const pages = ['Inicio','Contacto', 'Favoritos', 'detalle' ];
+const pages = ['inicio','Contacto', 'Favoritos' ];
 const settings = ['Dark', 'Light'];
 
 function ResponsiveAppBar() {
@@ -131,7 +131,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1}}>
-                <Avatar alt="Remy Sharp" src="/public/images/DH.ico" />
+                <Avatar alt="Remy Sharp" src="/images/DH.ico" />
               </IconButton>
             </Tooltip>
             <Menu

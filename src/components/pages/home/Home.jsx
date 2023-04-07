@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import CardUser from '../../common/card/CardUser'
 import styles from "./home.module.css"
 
-
 const Home = () => {
   
 const [users, setUsers] =useState([])
@@ -14,20 +13,27 @@ useEffect(()=>{
        .then(res => setUsers(res.data))
        .catch(err=> console.log(err))
 
+       const objetoJSON = JSON.stringify(users);
+       localStorage.setItem(users, objetoJSON);
+
 }, [])
-   
+
+
+console.log( users)
+
   return (
 <>
-<div>
+<div  className={styles.containerCards}>
   {
     users.map((user)=>{
       return (
-        <>
-        <div className={styles.containerCards}> 
-        <CardUser user={user} key={user.id}/>
+       
         
-        </div>
-        </>
+        <CardUser key={user.id}  user={user} />
+        
+       
+      
+       
       )
     })
   }
