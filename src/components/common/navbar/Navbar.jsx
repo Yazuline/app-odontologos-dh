@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-const pages = ['Inicio','Contacto', 'Favoritos' ];
+const pages = ['Inicio','Contacto', 'Favoritos', 'detalle' ];
 const settings = ['Dark', 'Light'];
 
 function ResponsiveAppBar() {

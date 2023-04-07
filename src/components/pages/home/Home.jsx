@@ -16,10 +16,7 @@ useEffect(()=>{
 
 }, [])
    
-console.log("usuarios",  users)
-
   return (
-
 <>
 <div>
   {
@@ -28,6 +25,7 @@ console.log("usuarios",  users)
         <>
         <div className={styles.containerCards}> 
         <CardUser user={user} key={user.id}/>
+        
         </div>
         </>
       )
