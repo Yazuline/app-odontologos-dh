@@ -7,16 +7,16 @@ import Contact from './components/pages/contact/Contact'
 import CollapsibleTable from './components/pages/detail/Details'
 import Favorite from './components/pages/favorite/Favorite'
 import Footer from './components/common/footer/Footer'
-
+import ThemeProvider from './contex/ThemeProvider'
 
 function App() {
  
 
   return (
     <>
-   
+    <ThemeProvider>
     <div>  <ResponsiveAppBar/></div>
-   
+     
       <Routes>
         <Route  path='/' element={<Home/>} />
         <Route  path='/inicio' element={<Home/>} />
@@ -25,7 +25,7 @@ function App() {
         <Route  path="/detalle/:userid" element={<CollapsibleTable   />} />
         <Route  path='*' element={<Navigate to="/"/>} />
      </Routes>
-    
+     </ThemeProvider>
     <Footer/>
    
     </>

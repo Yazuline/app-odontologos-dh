@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, TextField } from '@mui/material';
 import styles from "./contac.module.css"
+import { useTheme } from '../../../contex/ThemeProvider';
 
 
 const validationSchema = yup.object({
@@ -18,6 +19,8 @@ const validationSchema = yup.object({
 });
 
 const Contact = () => {
+  const { theme, toggleTheme, themeName } = useTheme();
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -31,6 +34,8 @@ const Contact = () => {
   });
 
   return (
+    <>
+     <div style={{ backgroundColor: theme.background, color: theme.textColor }}>
     <div className={styles.containerCards}>
 
       <form onSubmit={formik.handleSubmit}>
@@ -63,6 +68,8 @@ const Contact = () => {
         </Button>
       </form>
     </div>
+    </div>
+    </>
   );
 };
 

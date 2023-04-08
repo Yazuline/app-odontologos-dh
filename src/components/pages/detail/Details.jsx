@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { AuthContex } from '../../../contex/AuthContex';
-import axios from 'axios';
+import { useTheme } from '../../../contex/ThemeProvider';
 
 export default function CollapsibleTable() {
+  const { theme, toggleTheme, themeName } = useTheme();
   const [user, setUser] = useState()
    
     let{userid}= useParams()
@@ -19,7 +19,6 @@ export default function CollapsibleTable() {
       async function fetchUser() {
         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userid}`)
         const data = await response.json()
-        // console.log(data, data.id, data.name, data.email)
         setUser(data)
       }
       fetchUser()
@@ -30,11 +29,10 @@ export default function CollapsibleTable() {
     }
   
     
-
-    console.log(setUser)
-    console.log(userid)
  
-    return (     
+    return (  
+    <>
+    <body style={{ backgroundColor: theme.background, color: theme.textColor }}>
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
@@ -66,5 +64,7 @@ export default function CollapsibleTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </body>
+    </>
   );
 }

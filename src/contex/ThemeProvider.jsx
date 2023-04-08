@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const themeStyle={
     dark:{
-        background:'#282c34',
+        background:'#4B4453',
         textcolor:'white'
 
     },
@@ -22,8 +22,8 @@ const ThemeContex = createContext()
 
 
 function ThemeProvider(props){
-    const [theme, setTheme]=useState('dark')
-    const toggleTheme=()=> theme ==='dark' ? setTheme('light'): setTheme('dark')
+    const [theme, setTheme]=useState('light')
+    const toggleTheme=()=> theme ==='light' ? setTheme('dark'): setTheme('light')
     const value ={theme: themeStyle[theme],  toggleTheme, themeName:theme}
     return< ThemeContex.Provider  value={value} {...props}/>
 }

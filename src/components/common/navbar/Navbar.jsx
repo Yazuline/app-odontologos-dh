@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-
+import { useTheme } from '../../../contex/ThemeProvider';
 
 
 
@@ -21,6 +21,8 @@ const pages = ['inicio','Contacto', 'Favoritos' ];
 const settings = ['Dark', 'Light'];
 
 function ResponsiveAppBar() {
+
+  const { theme, toggleTheme, themeName } = useTheme();
   
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -41,7 +43,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static"  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />*/}
@@ -107,6 +109,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
+
             href=""
             sx={{
               mr: 2,
@@ -126,16 +129,16 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'inline' }}
+                sx={{ my: 2, color: 'black', display: 'inline' }}
               >
-              <Link style={{textDecoration:"none",  color:"white"}} to={`/${page}`}> {page}</Link>
+              <Link style={{textDecoration:"none",  color:"black"}} to={`/${page}`}> {page}</Link>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 1}}>
+            <Tooltip>
+              <IconButton onClick={toggleTheme} sx={{ p: 1}}>
                 <Avatar alt="Remy Sharp" src="/images/DH.ico" />
               </IconButton>
             </Tooltip>
@@ -155,11 +158,7 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+             
             </Menu>
           </Box>
         </Toolbar>      

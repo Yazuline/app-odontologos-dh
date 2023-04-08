@@ -2,11 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CardUser from '../../common/card/CardUser'
 import styles from "./home.module.css"
+import { useTheme } from '../../../contex/ThemeProvider'
 
 
 
 const Home = () => {
-
+const { theme, toggleTheme, themeName } = useTheme();
 const [users, setUsers] =useState([])
 useEffect(()=>{
 
@@ -23,7 +24,7 @@ useEffect(()=>{
 
   return (
 <>
-
+<div style={{ backgroundColor: theme.background, color: theme.textColor }}>
 
 <div  className={styles.containerCards}>
   {
@@ -39,6 +40,8 @@ useEffect(()=>{
       )
     })
   }
+</div>
+
 </div>
 
 
