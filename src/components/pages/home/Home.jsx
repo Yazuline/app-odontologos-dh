@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react'
 import CardUser from '../../common/card/CardUser'
 import styles from "./home.module.css"
 
+
+
 const Home = () => {
-  
+
 const [users, setUsers] =useState([])
 useEffect(()=>{
 
@@ -19,10 +21,10 @@ useEffect(()=>{
 }, [])
 
 
-console.log( users)
-
   return (
 <>
+
+
 <div  className={styles.containerCards}>
   {
     users.map((user)=>{
@@ -38,6 +40,8 @@ console.log( users)
     })
   }
 </div>
+
+
 </>
   )
 }
