@@ -3,7 +3,7 @@ Aplicación  desarrollada en React que consume Api https://jsonplaceholder.typic
 -Muestra  info en Cards.
 -link detalle de Card
 -favoritos localStore
--Contato
+-Contacto
 
 -uso:
   react-router-dom
